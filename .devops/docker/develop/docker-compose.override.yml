@@ -1,0 +1,4 @@
+services:
+  soketi-db:
+    ports:
+      - "5432:5432"

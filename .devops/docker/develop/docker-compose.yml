@@ -1,0 +1,18 @@
+version: '4.2'
+
+services:
+    soketi-db:
+        image: postgres:17.0
+        container_name: soketi-db
+        volumes:
+            - ~/storage_block/soketi/soketi-db/data:/var/lib/postgresql/data
+        environment:
+            POSTGRES_DB: soketi
+            POSTGRES_USER: esteban
+            POSTGRES_PASSWORD: secret
+        networks:
+            - soketi-network
+
+networks:
+    soketi-network:
+        external: true
